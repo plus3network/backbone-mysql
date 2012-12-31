@@ -1,7 +1,7 @@
 {
   "name": "backbone-mysql",
   "description": "A sync module for Backbone.js and Node.js for use with MySQL",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/plus3network/backbone-mysql",
   "author": {
     "name": "Chris Cowan",
