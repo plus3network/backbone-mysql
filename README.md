@@ -1,6 +1,6 @@
 # backbone-mysql
 
-A sync module for Backbone.js and Node.js for use with MySQL
+A sync module for Backbone.js and Node.js for use with MySQL. The motivation behind this module is that most of the ORM's for Node.js are kind of crappy. They either have bugs which make them unusable or they impliment a promises interace that is not to my liking. I was also looking for something that would work mostly the same on the frontend as the backend so that our developers can learn just one framework.
 
 ## Getting Started
 Install the module with: `npm install backbone-mysql`
@@ -25,6 +25,8 @@ example.fetch({
   }
 });
 ```
+
+Since the promises/callback pattern for Backbone is not very Node.js-ish I would recommend using [https://npmjs.org/package/backbone-callbacks](backbone-callbacks) to make things feel more native.
 
 ## Documentation
 _(Coming soon)_
