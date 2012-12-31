@@ -1,0 +1,43 @@
+{
+  "name": "backbone-mysql",
+  "description": "A sync module for Backbone.js and Node.js for use with MySQL",
+  "version": "0.1.0",
+  "homepage": "https://github.com/plus3network/backbone-mysql",
+  "author": {
+    "name": "Chris Cowan",
+    "email": "chriscowan@plus3network.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plus3network/backbone-mysql.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plus3network/backbone-mysql/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/plus3network/backbone-mysql/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/backbone-mysql",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "mocha": "~1.7.4",
+    "expect.js": "~0.2.0",
+    "grunt": "~0.3.17",
+    "sinon": "~1.5.2",
+    "sinon-expect": "~0.2.0"
+  },
+  "keywords": [],
+  "dependencies": {
+    "backbone": "~0.9.9",
+    "mysql": "~2.0.0-alpha5",
+    "underscore": "~1.4.3"
+  }
+}
