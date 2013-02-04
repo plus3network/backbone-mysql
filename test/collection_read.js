@@ -40,6 +40,18 @@ describe('read opperation', function () {
       });
     });
 
+    it('should match use an in statement for array', function (done) {
+      collection.fetch({
+        data: {
+          user_id: [1,2,3]
+        },
+        success: function (collection, response, options) {
+          expect(query.args[0][0]).to.eql('SELECT * FROM `users` WHERE `user_id` in (?,?,?)');
+          done();
+        }
+      });
+    });
+
     it('should match a select query statement', function (done) {
       collection.fetch({
         data: {
