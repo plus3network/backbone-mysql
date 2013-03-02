@@ -10,10 +10,9 @@ var Model = Backbone.Model.extend({
 });
 
 describe('read opperation', function () {
-    var query, model;
+    var query;
     beforeEach(function () {
       query = sinon.stub();
-      model = new Model({ id: 1 });
       Backbone.client = { query: query };
     });
 
@@ -28,6 +27,7 @@ describe('read opperation', function () {
     });
 
     it('should call the backbone_mysql.syncModel method on fetch', function (done) {
+      var model = new Model({ id: 1 });
       model.fetch({
         success: function (model, response, options) {
           expect(query).was.called();
@@ -37,6 +37,7 @@ describe('read opperation', function () {
     });
 
     it('should match a select query statement', function (done) {
+      var model = new Model({ id: 1 });
       model.fetch({
         success: function (model, response, options) {
           expect(query.args[0][0]).to.eql('SELECT * FROM `users` WHERE `id` = ?');
@@ -46,6 +47,7 @@ describe('read opperation', function () {
     });
 
     it('should pass the id as an argument for the query', function (done) {
+      var model = new Model({ id: 1 });
       model.fetch({
         success: function (model, response, options) {
           expect(query.args[0][1]).to.eql([1]);
@@ -55,6 +57,7 @@ describe('read opperation', function () {
     });
 
     it('should populate the attributes', function (done) {
+      var model = new Model({ id: 1 });
       model.fetch({
         success: function (model, response, options) {
           expect(model.id).to.eql(1);
@@ -73,6 +76,7 @@ describe('read opperation', function () {
     });
 
     it('should pass an Error object', function (done) {
+      var model = new Model({ id: 1 });
       model.fetch({
         error: function (model, err, options) {
           expect(err).to.be.an(Error);

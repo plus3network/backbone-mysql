@@ -10,10 +10,9 @@ var Collection = Backbone.Collection.extend({
 });
 
 describe('read opperation', function () {
-  var query, collection;
+  var query;
   beforeEach(function () {
     query = sinon.stub();
-    collection = new Collection();
     Backbone.client = { query: query };
   });
 
@@ -28,6 +27,7 @@ describe('read opperation', function () {
     });
 
     it('should call the collection sync method on fetch', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           rank: { value: 2, op: '>' },
@@ -41,6 +41,7 @@ describe('read opperation', function () {
     });
 
     it('should match use an in statement for array', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           user_id: [1,2,3]
@@ -53,6 +54,7 @@ describe('read opperation', function () {
     });
 
     it('should match a select query statement', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           rank: { value: 2, op: '>' },
@@ -66,6 +68,7 @@ describe('read opperation', function () {
     });
 
     it('should populate pass the where clauses', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           rank: { value: 2, op: '>' },
@@ -79,6 +82,7 @@ describe('read opperation', function () {
     });
 
     it('should match a select query statement with order by', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           rank: { value: 2, op: '>' },
@@ -92,6 +96,7 @@ describe('read opperation', function () {
     });
 
     it('should match a select query statement with order by and limit', function (done) {
+      var collection = new Collection();
       collection.fetch({
         data: {
           rank: { value: 2, op: '>' },
@@ -107,9 +112,10 @@ describe('read opperation', function () {
     });
 
     it('should populate the collection', function (done) {
+      var collection = new Collection();
       collection.fetch({
         success: function (collection, response, options) {
-          expect(collection).to.have.length(2);
+          expect(collection.length).to.be(2);
           done();
         }
       });
@@ -125,6 +131,7 @@ describe('read opperation', function () {
     });
 
     it('should pass an Error object', function (done) {
+      var collection = new Collection();
       collection.fetch({
         error: function (model, err, options) {
           expect(err).to.be.an(Error);
