@@ -36,7 +36,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "backbone": "~0.9.9",
+    "backbone": "~0.9.10",
     "mysql": "~2.0.0-alpha5",
     "underscore": "~1.4.3"
   }
